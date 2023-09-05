@@ -1,0 +1,7 @@
+<ng-container *ngIf="(loading$ | async); else notLoading">
+  <h3>Loading...</h3>
+</ng-container>
+<ng-template #notLoading>
+  <h3>Posts downloaded: {{itemsLength$ | async}}</h3>
+</ng-template>
+<app-list [items]="(titles$ | async)"></app-list>
